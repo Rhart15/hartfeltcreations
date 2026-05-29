@@ -17,6 +17,10 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; top: -100px; left: 1rem; background: var(--terracotta); color: #fff; padding: 0.75rem 1.25rem; border-radius: 8px; font-weight: 500; text-decoration: none; z-index: 9999; transition: top 0.2s; }
+    .skip-link:focus { top: 1rem; }
+    *:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; border-radius: 4px; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2.5rem; background: rgba(253,248,242,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,130,0.2); }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo .logo-box { width: 36px; height: 36px; background: var(--terracotta); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: #fff; flex-shrink: 0; }
@@ -115,25 +119,27 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#" class="nav-logo">
-      <div class="logo-box">H</div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="Hartfelt Creations home">
+      <div class="logo-box" aria-hidden="true">H</div>
       <div>
         <div class="logo-name">Hart<em>felt</em> Creations</div>
         <div class="logo-sub">Web &amp; Social</div>
       </div>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" role="list">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
     </ul>
   </nav>
-  <section class="hero">
-    <div class="hero-blob blob1"></div>
-    <div class="hero-blob blob2"></div>
-    <div class="hero-blob blob3"></div>
+  <main id="main-content">
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-blob blob1" aria-hidden="true"></div>
+    <div class="hero-blob blob2" aria-hidden="true"></div>
+    <div class="hero-blob blob3" aria-hidden="true"></div>
     <div class="hero-tag">✦ Now taking new clients</div>
     <h1>Your online presence, <em>sorted.</em></h1>
     <p class="hero-sub">Websites that work and social media that connects. I help small businesses show up online with warmth, personality, and professionalism.</p>
@@ -141,19 +147,19 @@
       <a href="#contact" class="btn-primary">Let's work together</a>
       <a href="#services" class="btn-secondary">See what I offer</a>
     </div>
-    <div class="hero-scroll">
+    <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
-  <section id="services">
+  <section id="services" aria-label="Services">
     <div class="container">
       <p class="section-label">What I do</p>
       <h2 class="section-title">Services built for <em>real businesses</em></h2>
       <p class="section-sub">Whether you need a brand new website or someone to handle your social media — I've got you.</p>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">🌐</div>
+          <div class="service-icon" aria-hidden="true">🌐</div>
           <h3>Website Design</h3>
           <p>Custom websites built from scratch — clean, fast, and made to impress your customers from the first click.</p>
           <ul class="service-features">
@@ -164,18 +170,18 @@
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">📱</div>
+          <div class="service-icon" aria-hidden="true">📱</div>
           <h3>Social Media Management</h3>
           <p>Consistent, on-brand content across your social channels — so you can focus on running your business.</p>
           <ul class="service-features">
-            <li>Content creation & scheduling</li>
+            <li>Content creation &amp; scheduling</li>
             <li>Monthly content calendar</li>
-            <li>Engagement & community replies</li>
+            <li>Engagement &amp; community replies</li>
             <li>Monthly performance report</li>
           </ul>
         </div>
         <div class="service-card">
-          <div class="service-icon">🎯</div>
+          <div class="service-icon" aria-hidden="true">🎯</div>
           <h3>Website + Social Bundle</h3>
           <p>Get everything under one roof. I'll build your site and keep your social media running — consistently and professionally.</p>
           <ul class="service-features">
@@ -188,20 +194,20 @@
       </div>
     </div>
   </section>
-  <section id="process">
+  <section id="process" aria-label="How it works">
     <div class="container">
       <p class="section-label">How it works</p>
       <h2 class="section-title">Simple from <em>start to finish</em></h2>
       <p class="section-sub">No confusing jargon. No chasing me for updates. Just a smooth, easy process from hello to handoff.</p>
       <div class="steps">
-        <div class="step"><div class="step-num">01</div><h3>We chat</h3><p>Tell me about your business, what you need, and what you're hoping for. No commitment, just a conversation.</p></div>
-        <div class="step"><div class="step-num">02</div><h3>I put together a plan</h3><p>I'll send you a clear proposal — what I'll build, what's included, timeline, and price. No surprises.</p></div>
-        <div class="step"><div class="step-num">03</div><h3>I get to work</h3><p>You sit back while I design and build. I'll check in with updates so you always know where things are at.</p></div>
-        <div class="step"><div class="step-num">04</div><h3>You go live</h3><p>Once you're happy, we launch. I'll walk you through everything so you feel fully confident with your new presence.</p></div>
+        <div class="step"><div class="step-num" aria-hidden="true">01</div><h3>We chat</h3><p>Tell me about your business, what you need, and what you're hoping for. No commitment, just a conversation.</p></div>
+        <div class="step"><div class="step-num" aria-hidden="true">02</div><h3>I put together a plan</h3><p>I'll send you a clear proposal — what I'll build, what's included, timeline, and price. No surprises.</p></div>
+        <div class="step"><div class="step-num" aria-hidden="true">03</div><h3>I get to work</h3><p>You sit back while I design and build. I'll check in with updates so you always know where things are at.</p></div>
+        <div class="step"><div class="step-num" aria-hidden="true">04</div><h3>You go live</h3><p>Once you're happy, we launch. I'll walk you through everything so you feel fully confident with your new presence.</p></div>
       </div>
     </div>
   </section>
-  <section id="packages">
+  <section id="packages" aria-label="Pricing packages">
     <div class="container">
       <p class="section-label">Pricing</p>
       <h2 class="section-title">Honest pricing, <em>no surprises</em></h2>
@@ -213,14 +219,14 @@
           <h3>Starter Site</h3>
           <div class="package-price">$350 <span>/ project</span></div>
           <p class="package-desc">A clean, professional website to get your business online and looking great.</p>
-          <ul class="package-list"><li>Up to 5 pages</li><li>Mobile responsive design</li><li>Contact form</li><li>Full handoff & walkthrough</li></ul>
+          <ul class="package-list"><li>Up to 5 pages</li><li>Mobile responsive design</li><li>Contact form</li><li>Full handoff &amp; walkthrough</li></ul>
         </div>
         <div class="package-card featured">
           <div class="package-tag">Most popular <span class="popular-badge">★ Best value</span></div>
           <h3>Social Media</h3>
           <div class="package-price">$210 <span>/ month</span></div>
           <p class="package-desc">Done-for-you social media management so you stay consistent without the stress.</p>
-          <ul class="package-list"><li>Up to 12 posts per month</li><li>Content calendar included</li><li>Captions & hashtags written</li><li>Monthly report</li></ul>
+          <ul class="package-list"><li>Up to 12 posts per month</li><li>Content calendar included</li><li>Captions &amp; hashtags written</li><li>Monthly report</li></ul>
         </div>
         <div class="package-card">
           <div class="package-tag">Best of both</div>
@@ -232,7 +238,7 @@
       </div>
     </div>
   </section>
-  <section id="about">
+  <section id="about" aria-label="About Hartfelt Creations">
     <div class="container">
       <div class="about-grid">
         <div class="about-visual">
@@ -249,39 +255,43 @@
           <p class="section-label">The difference</p>
           <h2 class="section-title">Human help for <em>real results</em></h2>
           <ul class="about-list">
-            <li><div class="about-icon">🤝</div><div><h4>You always talk to me directly</h4><p>No account managers, no passing you around. I handle your project personally, start to finish.</p></div></li>
-            <li><div class="about-icon">⚡</div><div><h4>Fast turnaround, no fluff</h4><p>I respect your time. Projects are delivered on schedule and communication is clear throughout.</p></div></li>
-            <li><div class="about-icon">🔓</div><div><h4>You own everything</h4><p>Your website, your content, your accounts. You're never locked in or dependent on me to keep things running.</p></div></li>
+            <li><div class="about-icon" aria-hidden="true">🤝</div><div><h4>You always talk to me directly</h4><p>No account managers, no passing you around. I handle your project personally, start to finish.</p></div></li>
+            <li><div class="about-icon" aria-hidden="true">⚡</div><div><h4>Fast turnaround, no fluff</h4><p>I respect your time. Projects are delivered on schedule and communication is clear throughout.</p></div></li>
+            <li><div class="about-icon" aria-hidden="true">🔓</div><div><h4>You own everything</h4><p>Your website, your content, your accounts. You're never locked in or dependent on me to keep things running.</p></div></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-  <section id="contact">
+  <section id="contact" aria-label="Contact">
     <div class="container">
       <p class="section-label">Get in touch</p>
       <h2 class="section-title">Ready to get <em>started?</em></h2>
       <p class="section-sub">Drop me a message and I'll get back to you within 24 hours. No hard sell, just a friendly chat about what you need.</p>
       <div style="display:flex;align-items:center;justify-content:center;margin-bottom:1.75rem;">
-        <a href="mailto:raysthoughts15@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--warm-white);border:1px solid var(--tan-light);border-radius:100px;padding:0.6rem 1.4rem;text-decoration:none;color:var(--terracotta);font-size:0.9rem;font-weight:500;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        <a href="mailto:raysthoughts15@gmail.com" aria-label="Send an email to raysthoughts15@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--warm-white);border:1px solid var(--tan-light);border-radius:100px;padding:0.6rem 1.4rem;text-decoration:none;color:var(--terracotta);font-size:0.9rem;font-weight:500;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
           raysthoughts15@gmail.com
         </a>
       </div>
       <div class="contact-card">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
           <input type="hidden" name="access_key" value="051b688d-028c-454e-88df-1c9b7ed95c22"/>
           <input type="hidden" name="subject" value="New enquiry from Hartfelt Creations website"/>
           <input type="hidden" name="redirect" value=""/>
           <div class="contact-form">
-            <input type="text" name="name" placeholder="Your name" required/>
-            <input type="email" name="email" placeholder="Your email" required/>
-            <input type="text" name="business" placeholder="Your business name (optional)"/>
-            <textarea name="message" placeholder="Tell me a bit about what you're looking for…" required></textarea>
-            <button type="submit" id="submit-btn">Send message ✦</button>
+            <label for="name" class="sr-only">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required aria-required="true" autocomplete="name"/>
+            <label for="email" class="sr-only">Your email address</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required aria-required="true" autocomplete="email"/>
+            <label for="business" class="sr-only">Your business name (optional)</label>
+            <input type="text" id="business" name="business" placeholder="Your business name (optional)" autocomplete="organization"/>
+            <label for="message" class="sr-only">Your message</label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about what you're looking for…" required aria-required="true"></textarea>
+            <button type="submit" id="submit-btn" aria-label="Send your message">Send message ✦</button>
           </div>
-          <div id="form-success" style="display:none;text-align:center;padding:1.5rem 0;">
-            <div style="font-size:2rem;margin-bottom:0.5rem;">✦</div>
+          <div id="form-success" style="display:none;text-align:center;padding:1.5rem 0;" role="alert" aria-live="polite">
+            <div style="font-size:2rem;margin-bottom:0.5rem;" aria-hidden="true">✦</div>
             <p style="font-family:'Fraunces',serif;font-size:1.2rem;color:var(--brown);font-weight:500;">Message sent!</p>
             <p style="font-size:0.875rem;color:var(--text-mid);margin-top:0.4rem;">I'll get back to you within 24 hours.</p>
           </div>
@@ -289,12 +299,13 @@
       </div>
     </div>
   </section>
-  <footer>
+  </main>
+  <footer role="contentinfo">
     <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:0.5rem;">
-      <div style="width:32px;height:32px;background:var(--terracotta);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff;">H</div>
+      <div style="width:32px;height:32px;background:var(--terracotta);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff;" aria-hidden="true">H</div>
       <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:var(--tan);letter-spacing:-0.01em;">Hart<em style="font-style:italic;color:var(--terracotta-light);font-weight:300;">felt</em> Creations</div>
     </div>
-    <p style="font-size:0.8rem;color:rgba(201,168,130,0.5);">Web Design & Social Media Management · Made with care ✦</p>
+    <p style="font-size:0.8rem;color:rgba(201,168,130,0.5);">Web Design &amp; Social Media Management · Made with care ✦</p>
   </footer>
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
